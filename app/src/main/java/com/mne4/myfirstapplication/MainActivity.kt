@@ -18,7 +18,6 @@ import org.json.JSONObject
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
     }
     fun onClickSearchButton(view: View) {
         getData(binding.editTextNumber.text.toString())
@@ -45,10 +44,11 @@ import org.json.JSONObject
                  binding.textViewBankPhone.text = card.bank.phone
                  binding.textViewCountryName.text = card.country.name
                  binding.textViewLatLong.text = "(latitude: ${card.country.latitude}, longitude: ${card.country.longitude})"
+                 binding.textViewCountryText.text = "County ${card.country.emoji}"
 
              },
              {
-                 binding.textViewError.text = "Информация по данному BIN/IIN не найдена"
+                 binding.textViewError.text = getString(R.string.notFound)
              })
          queue.add(stringRequest)
      }

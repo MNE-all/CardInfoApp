@@ -57,6 +57,7 @@ class CardCountry(obj: JSONObject) {
     var name: String = "?"
     var latitude: String = "?"
     var longitude: String = "?"
+    var emoji: String = ""
 
     init {
         try {
@@ -64,6 +65,7 @@ class CardCountry(obj: JSONObject) {
             name = country.getString("name")
             latitude = country.getString("latitude")
             longitude = country.getString("longitude")
+            emoji = country.getString("emoji")
         }
         catch (_: Exception) {
 
